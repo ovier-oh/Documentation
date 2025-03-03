@@ -162,3 +162,113 @@ float(variable)
 >> <class 'float'>
 ```
 
+### Formatear cadenas 
+
+Para facilitar la concatenacion de variables y texto en Python, contamos con dos herramientas que nos evitan manipular las variables, para incorporarlas directamente al texto:
+
+- **Funcion format:** se encierra las posiciones de las variables entre corhcetes {}, y a continuacion del string llamamos a las variables con la funcion format. 
+
+```
+print("Mi auto es {} y de matricula {}".format(color_auto, maticula))
+```
+
+- **Cadenas literales (f-strigns):** a partir de Python3.8, podemos anticipar la concatenacion de variables antoponiendo _f_  al string 
+  
+```
+print(f"Mi auto es {coloer_auto} y de matricula {matricula}")
+```
+
+### Operador Matematicos 
+
+Veamos cuales son los operadores matemáticos basicos de Python, que utilizaremos para realizar calculos.
+
+| Operador                      | Signo  | Ordenado                         |  
+|-------------------------------|--------|----------------------------------|
+| Suma                          | +      | check                            |
+| Resta                         | -      | check                            |
+| Multiplicación                | *      | nope                             |
+| Division                      | /      | nope*                            |
+| Cociente (division "al piso") | //     | nope*                            |
+| Resto (modulo)                | %      | util para detectar valores pares |
+| Potencia                      | **     | -                                |
+| Raíz Cuadrada                 | **0.5  | es un caso especial              |
+
+### Redondeo 
+
+El redondeo facilita la interpretacion de los valores calculados al limitar la cantidad de decimales que se muestran en pantalla. Tambien, nos permite aproximar valores decimales el entero más próximo. 
+
+```
+round(valor a rendodear, cantidad de decimales[si se omite, es entero])
+round(number, ndigits)
+```
+
+**Algunos ejemplos de uso**
+```
+print(round(100/3))
+>> 33 
+
+print(round(12/7, 2))
+>> 1,71
+```
+
+### Index() 
+
+Utilizamos el método `ìndex()` para explorar strign, ya que permite hallar el ñindice de aparicioón de un caracter o cadena de caracteres dento de un texto dado. 
+
+```
+string.index(value, start, end)
+```
+
+- `string` variable que almacena un string.
+- `value` caracter(es) buscado(s).
+- `start` Las aparaiciones antes del indice start se ignoran. 
+- `end` Las apariciones luego del indice end se ignoran. 
+
+```
+string.rindex(value, start, end)
+```
+- `rindex()` busqueda en sentido inverso.
+
+```
+string[i]
+```
+- Devuelve el caracter en el indice i* 
+  - En python, el indice en primera posición es el 0 
+  
+### Substrings 
+
+Podemos extraer porciones de texto utilizando las herramientas de manipulacion de strings conocidad como slicing (rebanar). 
+
+```
+string[start:stop:step]
+```
+
+- `start`indice de inicio del sub-string (includo)
+- `stop` indice del final del sub-string (no inluido)
+- `step` paso
+
+```
+saludo = H O L A _ M U N D O 
+         0 1 2 3 4 5 6 7 8 9 
+print(saludo[2:6])
+>> La_M
+
+print(saludo[3::3])
+>> aou 
+
+print(saludo[::-1])
+>> odnu;_aloH 
+```
+
+### Strings: Propiedades 
+
+Esto es lo que debes tener presente al trabajar con strings en Python: 
+
+- **Son inmutables:** una vez creados, no pueden modificarse sus partes, pero si pueden reasignarse los valores de las variables a través de métodos de strings. 
+- **Concatenable:** es posible unir strings con el simbolo +.
+- **Multiplicable:** es posible concatenar repeticiones de un string con el simbolo *.
+- **Miltilinealess:** pueden escribirse en varias lineas al encerrarse entre triples comillas simples ('''') o dobles (""" """).
+- **Determinar su longitud:** a través de la función `len(mi_string)`.
+- **Verificar su contenido:** a través de las palabras clave `in` y `not in`. El resultado de esta verificación es un booleano (`True/False`).
+  
+
